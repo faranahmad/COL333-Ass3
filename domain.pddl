@@ -1,6 +1,6 @@
 ; Authors: Faran Ahmad, Kartikeya Gupta
 
-(define (domain Kar))
+(define (domain Far)
 (:requirements :adl)
 
 (:types car
