@@ -1,0 +1,17 @@
+(:predicates 	(free ?x - grid)
+				(occupied ?x - car ?y - grid)
+				(notfree ?x - grid)
+				(isinbetween ?init - grid ?mid - grid ?final - grid)
+				(horizontal ?x - car)
+				(vertical ?x - car)
+				(maplength ?x - car ?y - length)
+)
+
+(:action move_up 
+	:parameters (?x - car ?initial -grid ?final - grid)
+	:precondition (and((free ?final) 
+						(forall (?midpos - grid) (imply (isinbetween(?final ?midpos ?initial)) (free ?midpos)) )
+						(vertical ?x)) 
+				)
+	:
+
