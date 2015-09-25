@@ -1,12 +1,14 @@
 (define (domain kartikeya-faran)
   (:requirements :typing :adl)
   (:types car grid)
-  (:predicates (carfrom ?c - car ?x - grid ?y - grid)
-  		   (samelength ?x - grid ?y - grid ?z - grid ?w - grid)
+  (:predicates (horizontal ?c - car)
+  			(vertical ?c - car)
+  			(carfrom ?c - car ?x - grid ?y - grid)
+  		   	(samelength ?x - grid ?y - grid ?z - grid ?w - grid)
 			(isinbetween ?init - grid ?mid - grid ?final - grid)
   		   )
 
-  (:action move
+  (:action moveh
     :parameters (?carnum - car ?initx ?inity ?finx ?finy - grid)
     :precondition (and (carfrom ?carnum ?initx ?inity)
 		       (samelength ?initx ?inity ?finx ?finy)
