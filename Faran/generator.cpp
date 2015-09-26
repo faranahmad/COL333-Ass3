@@ -36,21 +36,21 @@ int main ()
 	}
 	int finalx,finaly;
 	cin >>finalx>>finaly;
-	ofstream myfile ("example.pddl");
+    ofstream myfile ("problem.pddl");
 	if (myfile.is_open())
   	{
-    	myfile << "(define(problem parking)" << "\n" << "(:domain parking)" << "\n" << "(:objects" << "\n";
+        myfile << "(define(problem Getout)" << "\n" << "(:domain Far)" << "\n" << "(:objects ";
     	for(int i=1;i<=number;i++)
     	{
     		myfile << "car_" + to_string(i) + " ";
     	}
-    	myfile << "-" << " " << "car" << "\n";
+    	myfile << "-" << " " << "car ";
     	for(int i = 1;i<=gridnumber;i++)
     	{
     		myfile << "grid_" +  to_string(i) + " " ;
     	}
     	myfile << "-" << " " << "grid" << ")" << "\n";
-		myfile << "(:init" << "\n" << "\t";
+		myfile << "(:init" << "\n";
 		vector< pair<int,int> > occupied;
 		unordered_map<int,bool> isoccupied;
 		vector< pair<int,int> > position;
@@ -121,7 +121,7 @@ int main ()
 				myfile << "(neighbourleft grid_" << to_string(i) << " grid_" << to_string(i-1) << ")\n";
 			}
 		}
-		myfile << ")\n(:goal\n\t(and";
+		myfile << ")\n(:goal (and";
 		int gridinitial = (carinfo[0][3] - 1)*M + carinfo[0][2];
 		int gridfinal = (finaly-1)*M + finalx;
 		for(int i = 2;i<M;i++)
@@ -129,8 +129,8 @@ int main ()
 			if(i == gridfinal || i+(N-1)*M == gridfinal)
 			{
 				myfile << "(vertical car_1)\n";
-				myfile << "(position car_1 " << to_string(gridfinal) << ")\n";
-				myfile << "not(position car_1" << to_string(gridinitial) << ")\n"; 
+				myfile << "(position car_1 " << to_string(gridfinal) << ")";
+				myfile << "(not(position car_1" << to_string(gridinitial) << ")"; 
 				break;
 			}
 
@@ -139,13 +139,13 @@ int main ()
 		{
 			if(i == gridfinal || i + M - 1 == gridfinal)
 			{
-				myfile << "(horizontal car_1)\n";
-				myfile << "(position car_1 grid_" << to_string(gridfinal) <<")\n";
-				myfile << "not(position car_1 grid_" << to_string(gridinitial) << ")\n"; 
+				myfile << "(horizontal car_1) ";
+				myfile << "(position car_1 grid_" << to_string(gridfinal) <<") ";
+				myfile << "(not(position car_1 grid_" << to_string(gridinitial) << ")"; 
 				break;	
 			}
 		}
-		myfile << ")))";
+		myfile << "))))";
 		myfile.close();
 	}	
   	else cout << "Unable to open file";
