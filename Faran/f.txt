@@ -1,42 +1,3 @@
-; Authors: Faran Ahmad, Kartikeya Gupta
-
-(define (domain Far)
-(:requirements :typing :adl)
-
-(:types car
-	grid
-)
-
-(:predicates 	(free ?x - grid)
-				(position ?x - car ?y - grid)
-				(occupied ?x - car ?y - grid)
-				(horizontal ?x - car)
-				(vertical ?x - car)
-				(neighbourup ?x - grid ?y - grid)
-				(neighbourleft ?x - grid ?y - grid)
-)
-
-(:action move_up
-	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
-	:precondition	(and
-							(free ?final)
-							(neighbourup ?initial ?final)
-							(neighbourup ?down ?last)
-							(position ?x ?initial)
-							(occupied ?x ?last)
-							(free ?down)
-							(vertical ?x)
-						
-				  	)	
-	:effect (and
-					(not(position ?x ?initial))
-					(not(occupied ?x ?last))
-					(not(free ?final))
-					(position ?x ?final)
-					(occupied ?x ?final)
-					(free ?last)
-			)
-)
 
 (:action move_down
 	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
@@ -50,10 +11,9 @@
 						
 					)
 	:effect (and
+					(position ?x ?final)
 					(not(position ?x ?initial))
 					(not(occupied ?x ?initial))
-					(not(free ?down))
-					(position ?x ?final)
 					(occupied ?x ?down)
 					(free ?initial)
 			)
@@ -71,11 +31,10 @@
 							(horizontal ?x)
 				  	)	
 	:effect (and
-					(not(position ?x ?initial))
-					(not(occupied ?x ?last))
-					(not(free ?final))
 					(position ?x ?final)
+					(not(position ?x ?initial))
 					(occupied ?x ?final)
+					(not(occupied ?x ?last))
 					(free ?last)
 			)
 
@@ -92,10 +51,9 @@
 							(horizontal ?x)
 					)
 	:effect (and
+					(position ?x ?final)
 					(not(position ?x ?initial))
 					(not(occupied ?x ?initial))
-					(not(free ?right))
-					(position ?x ?final)
 					(occupied ?x ?right)
 					(free ?initial)
 			)

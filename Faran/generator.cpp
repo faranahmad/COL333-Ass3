@@ -130,7 +130,7 @@ int main ()
 			{
 				myfile << "(vertical car_1)\n";
 				myfile << "(position car_1 " << to_string(gridfinal) << ")";
-				myfile << "(not(position car_1" << to_string(gridinitial) << ")"; 
+				// myfile << "(not(position car_1" << to_string(gridinitial) << ")"; 
 				break;
 			}
 
@@ -141,11 +141,11 @@ int main ()
 			{
 				myfile << "(horizontal car_1) ";
 				myfile << "(position car_1 grid_" << to_string(gridfinal) <<") ";
-				myfile << "(not(position car_1 grid_" << to_string(gridinitial) << ")"; 
+				// myfile << "(not(position car_1 grid_" << to_string(gridinitial) << ")"; 
 				break;	
 			}
 		}
-		myfile << "))))";
+		myfile << ")))";
 		myfile.close();
 	}	
   	else cout << "Unable to open file";
