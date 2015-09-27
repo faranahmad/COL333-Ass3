@@ -17,7 +17,7 @@
 )
 
 (:action move_up
-	:parameters (?x - car ?initial - grid ?final - grid ?down - grid ?last - grid)
+	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
 	:precondition	(and
 							(free ?final)
 							(neighbourup ?initial ?final)
@@ -34,9 +34,7 @@
 					(occupied ?x ?final)
 					(not(occupied ?x ?last))
 					(free ?last)
-				
-
-
+					(not(free ?final))
 			)
 )
 
@@ -47,7 +45,7 @@
 							(neighbourup ?final ?initial)
 							(neighbourup ?down ?last)
 							(position ?x ?initial)
-							(ocuupied ?x ?last)
+							(occupied ?x ?last)
 							(vertical ?x)
 						
 					)
@@ -56,6 +54,7 @@
 					(not(position ?x ?initial))
 					(not(occupied ?x ?initial))
 					(occupied ?x ?down)
+					(not(free ?down))
 					(free ?initial)
 			)
 )
@@ -77,6 +76,7 @@
 					(occupied ?x ?final)
 					(not(occupied ?x ?last))
 					(free ?last)
+					(not(free ?final))
 			)
 
 )
@@ -97,6 +97,7 @@
 					(not(occupied ?x ?initial))
 					(occupied ?x ?right)
 					(free ?initial)
+					(not(free ?right))
 			)
 ))
 

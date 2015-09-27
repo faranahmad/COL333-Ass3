@@ -115,4 +115,4 @@
 (neighbourleft grid_35 grid_34)
 (neighbourleft grid_36 grid_35)
 )
-(:goal (and(horizontal car_1) (position car_1 grid_13) (not(position car_1 grid_16)))))
+(:goal (and(horizontal car_1) (position car_1 grid_13))))
