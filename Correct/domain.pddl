@@ -21,13 +21,13 @@
 (:action move_up
 	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
 	:precondition	(and
+							(vertical ?x)
 							(free ?final)
 							(neighbourup ?initial ?final)
-							(or (wallb ?last) (neighbourup ?down ?last))
 							(position ?x ?initial)
 							(occupied ?x ?last)
+							(or (wallb ?last) (neighbourup ?down ?last))
 							(or (free ?down) (wallb ?last))
-							(vertical ?x)
 				  	)	
 	:effect (and
 					(not(position ?x ?initial))
@@ -42,13 +42,12 @@
 (:action move_down
 	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
 	:precondition	(and
+							(vertical ?x)
 							(free ?down)
 							(neighbourup ?final ?initial)
 							(neighbourup ?down ?last)
 							(position ?x ?initial)
 							(occupied ?x ?last)
-							(vertical ?x)
-						
 					)
 	:effect (and
 					(not(position ?x ?initial))
@@ -64,12 +63,12 @@
 	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?right - grid)
 	:precondition	(and
 							(free ?final)
-							(or (free ?right) (walll ?last)) 
+							(horizontal ?x)
 							(neighbourleft ?initial ?final)
-							(or (walll ?last) (neighbourleft ?right ?last))
 							(position ?x ?initial)
 							(occupied ?x ?last)
-							(horizontal ?x)
+							(or (walll ?last) (neighbourleft ?right ?last))
+							(or (free ?right) (walll ?last)) 
 				  	)	
 	:effect (and
 					(not(position ?x ?initial))
@@ -86,11 +85,11 @@
 	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?right - grid)
 	:precondition	(and
 							(free ?right)
+							(horizontal ?x)
 							(neighbourleft ?final ?initial)
 							(neighbourleft ?right ?last)
 							(position ?x ?initial)
 							(occupied ?x ?last)
-							(horizontal ?x)
 					)
 	:effect (and
 					(not(position ?x ?initial))
