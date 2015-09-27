@@ -98,6 +98,16 @@ int main ()
 		{
 			myfile << "(free grid_" << to_string(isfree[i]) << ")\n";
 		}
+		for(int i = 1;i<=M;i++)
+		{
+			myfile << "(wall grid_" << to_string(i) << ")" <<endl;
+			myfile << "(wall grid_" << to_string(i + M*(N-1)) <<")"<< endl;
+		}
+		for(int i = M+1;i<=M*(N-2) + 1;i+=M)
+		{
+			myfile << "(wall grid_" << to_string(i) << ")" <<endl;
+			myfile << "(wall grid_" << to_string(i + M -1) <<")"<< endl;	
+		}
 		// myfile.close();
 		for(int i = 1;i<=ishorizontal.size();i++)
 		{

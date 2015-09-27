@@ -50,7 +50,7 @@ int main()
 	vector<string> lines;
     string line;
     // char* filename = argv[1];
-    ifstream myfile ( "problem.plan" );
+    ifstream myfile ( "problem2.plan" );
     if ( myfile.is_open ( ) )
     {
         bool soln_exist = false;
@@ -58,6 +58,7 @@ int main()
         {
             if(line == "Solution found!")
             {
+                // cout <<"here" << endl;
                 soln_exist = true;
             }
             else if(line == "Completely explored state space -- no solution!")
@@ -67,6 +68,7 @@ int main()
             }
             else if(soln_exist == true && line[0] == 'm')
             {
+                // cout << "in this one" << endl;
                 lines.push_back(line);
             }
         }
@@ -77,17 +79,24 @@ int main()
         cout << "Unable to open input file";
         exit ( 0 );
     }
-    if(line.size()==0)
+    if(lines.size()==0)
     {
+        // cout << "why"<< endl;
         cout << 0 << endl;
         exit(0);
     }
     else
     {
+        // for(int i = 0;i<lines.size();i++)
+        // {
+        //     cout << lines[i] << endl;
+        // }
         vector< pair<string,string> > t;
-        for(int i = 0;i < line.size();i++)
+        for(int i = 0;i < lines.size();i++)
         {
-            vector<string> splitted = SplitString(line[i],' ');
+            char x = ' ';
+            vector<string> splitted = SplitString(lines[i],x);
+            // cout << splitted[0] <<" "<< splitted[1]<<" "<<splitted[2]<<" "<< splitted[3]<<" "<<splitted[4] << endl;
             string r = getNumber(splitted[1]);
             if(splitted[0] == "move_up")
             {
@@ -106,19 +115,28 @@ int main()
                 t.push_back(make_pair(r," D "));
             }
         }
+        // for(int i = 0;i<t.size();i++)
+        // {
+        //     cout << t[i].first << " " << t[i].second << endl;
+        // }
         int k = 0;
         vector<string> answer;
         while(k<t.size())
         {
             int count = 1;
-            while(t[k].first == t[k+1].first && k+1 < t.size())
+            if(k+1<t.size())
             {
-                count++;
-                k++;
+                while(t[k].first == t[k+1].first)
+                {
+                    count++;
+                    k++;
+                    if(k+1==t.size())
+                        break;
+                }
             }
             string f = t[k].first.append(t[k].second).append(to_string(count));
             answer.push_back(f);
-
+            k+=1;
         } 
         cout << answer.size() << endl;
         for(int u = 0;u<answer.size();u++)
