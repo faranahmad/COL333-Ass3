@@ -50,7 +50,7 @@ int main()
 	vector<string> lines;
     string line;
     // char* filename = argv[1];
-    ifstream myfile ( "problem2.plan" );
+    ifstream myfile ( "problem.plan" );
     if ( myfile.is_open ( ) )
     {
         bool soln_exist = false;
@@ -58,7 +58,7 @@ int main()
         {
             if(line == "Solution found!")
             {
-                // cout <<"here" << endl;
+                cout <<"here" << endl;
                 soln_exist = true;
             }
             else if(line == "Completely explored state space -- no solution!")
@@ -68,7 +68,7 @@ int main()
             }
             else if(soln_exist == true && line[0] == 'm')
             {
-                // cout << "in this one" << endl;
+                cout << "in this one" << endl;
                 lines.push_back(line);
             }
         }
@@ -81,7 +81,7 @@ int main()
     }
     if(lines.size()==0)
     {
-        // cout << "why"<< endl;
+        cout << "why"<< endl;
         cout << 0 << endl;
         exit(0);
     }
@@ -126,7 +126,7 @@ int main()
             int count = 1;
             if(k+1<t.size())
             {
-                while(t[k].first == t[k+1].first && t[k].second == t[k].second)
+                while(t[k].first == t[k+1].first && t[k].second == t[k+1].second)
                 {
                     count++;
                     k++;
