@@ -1,33 +1,28 @@
 ; Authors: Faran Ahmad, Kartikeya Gupta
 
 (define (domain Far)
-(:requirements :typing :adl)
 
-(:types car
-	grid
-)
-
-(:predicates 	(free ?x - grid)
-				(position ?x - car ?y - grid)
-				(occupied ?x - car ?y - grid)
-				(horizontal ?x - car)
-				(vertical ?x - car)
-				(neighbourup ?x - grid ?y - grid)
-				(neighbourleft ?x - grid ?y - grid)
-				(walll ?x - grid)
-				(wallb ?x - grid)
+(:predicates 	(free ?x)
+				(position ?x ?y)
+				(occupied ?x ?y)
+				(horizontal ?x)
+				(vertical ?x)
+				(neighbourup ?x ?y)
+				(neighbourleft ?x ?y)
+				(walll ?x)
+				(wallb ?x)
 )
 
 (:action move_up
-	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
+	:parameters (?x ?initial ?final ?last ?down)
 	:precondition	(and
-							(occupied ?x ?last)
-							(position ?x ?initial)
+							(vertical ?x)
+							(free ?final)
 							(neighbourup ?initial ?final)
+							(position ?x ?initial)
+							(occupied ?x ?last)
 							(or (wallb ?last) (neighbourup ?down ?last))
 							(or (free ?down) (wallb ?last))
-							(free ?final)
-							(vertical ?x)
 				  	)	
 	:effect (and
 					(not(position ?x ?initial))
@@ -40,14 +35,14 @@
 )
 
 (:action move_down
-	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?down - grid)
+	:parameters (?x ?initial ?final ?last ?down)
 	:precondition	(and
-							(occupied ?x ?last)
-							(position ?x ?initial)
-							(neighbourup ?down ?last)
-							(neighbourup ?final ?initial)
 							(vertical ?x)
 							(free ?down)
+							(neighbourup ?final ?initial)
+							(neighbourup ?down ?last)
+							(position ?x ?initial)
+							(occupied ?x ?last)
 					)
 	:effect (and
 					(not(position ?x ?initial))
@@ -60,15 +55,15 @@
 )
 
 (:action move_left
-	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?right - grid)
+	:parameters (?x ?initial ?final ?last ?right)
 	:precondition	(and
-							(occupied ?x ?last)
-							(position ?x ?initial)
+							(free ?final)
 							(horizontal ?x)
 							(neighbourleft ?initial ?final)
+							(position ?x ?initial)
+							(occupied ?x ?last)
 							(or (walll ?last) (neighbourleft ?right ?last))
 							(or (free ?right) (walll ?last)) 
-							(free ?final)
 				  	)	
 	:effect (and
 					(not(position ?x ?initial))
@@ -82,14 +77,14 @@
 )
 
 (:action move_right
-	:parameters (?x - car ?initial - grid ?final - grid ?last - grid ?right - grid)
+	:parameters (?x ?initial ?final ?last ?right)
 	:precondition	(and
-							(occupied ?x ?last)
-							(position ?x ?initial)
+							(free ?right)
 							(horizontal ?x)
 							(neighbourleft ?final ?initial)
 							(neighbourleft ?right ?last)
-							(free ?right)
+							(position ?x ?initial)
+							(occupied ?x ?last)
 					)
 	:effect (and
 					(not(position ?x ?initial))

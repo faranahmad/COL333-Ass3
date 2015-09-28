@@ -27,6 +27,15 @@ allobjects = " ".join(makegridobjects(dimx,dimy) + [" - grid "] +MakeCarObjects(
 allobjects = "(:objects " + allobjects + ")"
 thingstowrite.append(allobjects)
 
+distances=[]
+for i in xrange(1,ncars+1):
+	for j in xrange(1,ncars+1):
+		strreq = "(= (distance C_"+str(i) + " C_"+str(j)+" ) "
+		if i==j:
+			strreq+=" 0 )\n"
+		else:
+			strreq+=" 1 )\n"
+		distances.append(strreq)
 
 def makeisinbetweenstring(i,j,k,l):
 	#Above lies
@@ -98,6 +107,8 @@ for elem in allcars:
 # print allcars
 
 
+leftsneeded=list(set(leftsneeded))
+upsneeded = list(set(upsneeded))
 abovelise=[]
 for i in upsneeded:
 	for j in xrange(2,dimx+1):
@@ -117,7 +128,7 @@ for i in xrange(1,1+dimy):
 		# else:
 			# carstrings.append("( occupied C_"+boolgrids[i][j]+" G_"+str(i)+"_"+str(j)+" )\n") 
 
-print " ".join(carstrings)
+# print " ".join(carstrings)
 
 goalstring = ("(:goal ( and ( " )
 if allcars[0][4]=='H':
@@ -125,11 +136,12 @@ if allcars[0][4]=='H':
 else:
 	goalstring += "vertical C_1 ) ( carfrom C_1 G_"+goalstate[0]+"_"+goalstate[1] +" G_" +goalstate[0]+"_"+str(int(goalstate[1]) + int(allcars[0][1])-1 ) + "))"
 
-print goalstate
-print goalstring
-thingstowrite.append("(:init ")
+# print goalstate
+# print goalstring
+thingstowrite.append("(:init (= (total-cost) 0) (prevcar C_1) ")
 thingstowrite.append(" ".join(carstrings))
 thingstowrite.append(" ".join(abovelise))
+thingstowrite.append(" ".join(distances))
 thingstowrite.append(" ".join(leftlise))
 # thingstowrite.append(" ".join(walls))
 # thingstowrite.append(" ".join(rightlise))
@@ -138,7 +150,7 @@ thingstowrite.append(")")
 thingstowrite.append((goalstring+")"))
 
 
-stringtowrite ="\n".join(thingstowrite) + ")"
+stringtowrite ="\n".join(thingstowrite) + "\n(:metric minimize (total-cost)))"
 a = open(filenametogen,'w')
 a.write(stringtowrite)
 a.close()

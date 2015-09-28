@@ -23,9 +23,19 @@ def MakeCarObjects(numcars):
 dimx,dimy = map (int, raw_input().split())
 ncars = int (raw_input())
 
-allobjects = " ".join(makegridobjects(dimx,dimy) + [" - grid "] +MakeCarObjects(ncars) + [" - car"])
+gridobjs = makegridobjects(dimx,dimy)
+carobjs = MakeCarObjects(ncars)
+allobjects = " ".join(gridobjs) +" "+ " ".join(carobjs)
 allobjects = "(:objects " + allobjects + ")"
 thingstowrite.append(allobjects)
+
+gridtypes=[]
+for elem in gridobjs:
+	gridtypes.append("(grid "+elem + " )\n")
+
+cartypes=[]
+for elem in carobjs:
+	cartypes.append("(car "+elem+ " )\n")
 
 
 def makeisinbetweenstring(i,j,k,l):
@@ -36,24 +46,6 @@ def makeisinbetweenstring2(i,j,k,l):
 	#Left lies
 	return "( neighbourleft G_"+str(i)+"_"+str(j) + " G_" + str(k)+"_"+str(l) + " )\n"
 
-def makeisinbetweenstring3(i,j,k,l):
-	#below lies
-	return "( belowlies G_"+str(i)+"_"+str(j) + " G_" + str(k)+"_"+str(l) + " )\n"
-
-def makeisinbetweenstring4(i,j,k,l):
-	#right lies
-	return "( rightlies G_"+str(i)+"_"+str(j) + " G_" + str(k)+"_"+str(l) + " )\n"
-
-
-belowlise=[]
-for i in xrange(1,dimy+1):
-	for j in xrange(1,dimx):
-		belowlise.append(makeisinbetweenstring3(i,j,i,j+1))
-
-rightlise=[]
-for i in xrange(1,dimy):
-	for j in xrange(1,dimx+1):
-		rightlise.append(makeisinbetweenstring4(i,j,i+1,j))
 
 walls=[]
 
@@ -82,7 +74,7 @@ for elem in allcars:
 		x2 = int(elem[3])
 		fin = x1 + int(elem[1]) -1
 		carstrings.append("( horizontal C_"+elem[0] +")\n")
-		carstrings.append("( position C_"+elem[0]+" G_"+str(x1)+"_"+str(x2) +" G_"+str(fin) +"_" + str(x2) + " )\n")
+		carstrings.append("( position C_"+elem[0]+" G_"+str(x1)+"_"+str(x2) + ")\n")
 		leftsneeded.append(x2)
 		for i in xrange(int(elem[1])):
 			boolgrids[x1+i][x2]=elem[0]
@@ -92,7 +84,7 @@ for elem in allcars:
 		upsneeded.append(x1)
 		fin = x2 + int(elem[1]) -1
 		carstrings.append("( vertical C_"+elem[0] + ")\n")
-		carstrings.append("( position C_"+elem[0]+" G_"+str(x1)+"_"+str(x2) +" G_"+str(x1)+"_"+str(fin) + " )\n")
+		carstrings.append("( position C_"+elem[0]+" G_"+str(x1)+"_"+str(x2) + ")\n")
 		for i in xrange(int(elem[1])):
 			boolgrids[x1][x2+i]=elem[0]
 # print allcars
@@ -114,24 +106,26 @@ for i in xrange(1,1+dimy):
 	for j in xrange(1,1+dimx):
 		if boolgrids[i][j]==0:
 			carstrings.append("( free G_"+str(i)+"_"+str(j)+" )\n")
-		# else:
-			# carstrings.append("( occupied C_"+boolgrids[i][j]+" G_"+str(i)+"_"+str(j)+" )\n") 
+		else:
+			carstrings.append("( occupied C_"+boolgrids[i][j]+" G_"+str(i)+"_"+str(j)+" )\n") 
 
 print " ".join(carstrings)
 
 goalstring = ("(:goal ( and ( " )
 if allcars[0][4]=='H':
-	goalstring += "horizontal C_1 ) ( position C_1 G_"+goalstate[0]+"_"+goalstate[1] +" G_"+str(int(goalstate[0]) + int(allcars[0][1])-1) +"_"+goalstate[1]+ "))"
+	goalstring += "horizontal C_1 ) ( position C_1 G_"+goalstate[0]+"_"+goalstate[1] + "))"
 else:
-	goalstring += "vertical C_1 ) ( carfrom C_1 G_"+goalstate[0]+"_"+goalstate[1] +" G_" +goalstate[0]+"_"+str(int(goalstate[1]) + int(allcars[0][1])-1 ) + "))"
+	goalstring += "vertical C_1 ) ( carfrom C_1 G_"+goalstate[0]+"_"+goalstate[1] + "))"
 
 print goalstate
 print goalstring
 thingstowrite.append("(:init ")
+# thingstowrite.append(" ".join(cartypes))
+# thingstowrite.append(" ".join(gridtypes))
 thingstowrite.append(" ".join(carstrings))
 thingstowrite.append(" ".join(abovelise))
 thingstowrite.append(" ".join(leftlise))
-# thingstowrite.append(" ".join(walls))
+thingstowrite.append(" ".join(walls))
 # thingstowrite.append(" ".join(rightlise))
 # thingstowrite.append(" ".join(belowlise))
 thingstowrite.append(")")

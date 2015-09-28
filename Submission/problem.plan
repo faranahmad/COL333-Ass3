@@ -1,0 +1,181 @@
+INFO     Running search.
+INFO     search input: output
+INFO     search arguments: ['--search', 'astar(lmcut())']
+INFO     search time_limit: None
+INFO     search memory limit: None
+INFO     search executable: /home/kartikeya/Desktop/LAMA/src/search/downward-release
+reading input... [t=0.00s]
+Simplifying transitions... done!
+done reading input! [t=0.03s]
+packing state variables...done! [t=0.03s]
+Variables: 99
+Facts: 209
+Bytes per state: 16
+Building successor generator...done! [t=0.04s]
+done initalizing global data [t=0.04s]
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+Initializing landmark cut heuristic...
+New best heuristic value for lmcut: 7
+[g=0, 1 evaluated, 0 expanded, t=0.04s, 5888 KB]
+f = 7 [1 evaluated, 0 expanded, t=0.04s, 5888 KB]
+Initial heuristic value for lmcut: 7
+f = 8 [4 evaluated, 1 expanded, t=0.04s, 5888 KB]
+New best heuristic value for lmcut: 6
+[g=2, 11 evaluated, 3 expanded, t=0.04s, 5888 KB]
+New best heuristic value for lmcut: 5
+[g=2, 12 evaluated, 4 expanded, t=0.04s, 5888 KB]
+New best heuristic value for lmcut: 4
+[g=3, 13 evaluated, 4 expanded, t=0.04s, 5888 KB]
+New best heuristic value for lmcut: 3
+[g=4, 38 evaluated, 13 expanded, t=0.04s, 5888 KB]
+f = 9 [59 evaluated, 25 expanded, t=0.05s, 5888 KB]
+f = 10 [133 evaluated, 65 expanded, 6 reopened, t=0.08s, 5888 KB]
+f = 11 [362 evaluated, 167 expanded, 8 reopened, t=0.16s, 5888 KB]
+f = 12 [636 evaluated, 401 expanded, 31 reopened, t=0.28s, 5888 KB]
+f = 13 [819 evaluated, 604 expanded, 37 reopened, t=0.36s, 5888 KB]
+f = 14 [971 evaluated, 770 expanded, 37 reopened, t=0.43s, 5888 KB]
+f = 15 [1152 evaluated, 908 expanded, 37 reopened, t=0.51s, 5888 KB]
+f = 16 [1366 evaluated, 1103 expanded, 39 reopened, t=0.61s, 5888 KB]
+f = 17 [1542 evaluated, 1318 expanded, 41 reopened, t=0.71s, 5888 KB]
+f = 18 [1630 evaluated, 1485 expanded, 44 reopened, t=0.77s, 5888 KB]
+f = 19 [1707 evaluated, 1652 expanded, 53 reopened, t=0.83s, 5888 KB]
+f = 20 [1737 evaluated, 1733 expanded, 53 reopened, t=0.85s, 5888 KB]
+f = 21 [1742 evaluated, 1761 expanded, 53 reopened, t=0.86s, 5888 KB]
+f = 22 [1747 evaluated, 1787 expanded, 53 reopened, t=0.86s, 5888 KB]
+f = 23 [1754 evaluated, 1800 expanded, 53 reopened, t=0.87s, 5888 KB]
+f = 24 [1754 evaluated, 1804 expanded, 53 reopened, t=0.87s, 5888 KB]
+f = 25 [1777 evaluated, 1820 expanded, 53 reopened, t=0.88s, 5888 KB]
+f = 26 [1821 evaluated, 1845 expanded, 53 reopened, t=0.90s, 5888 KB]
+f = 27 [2135 evaluated, 2081 expanded, 109 reopened, t=1.07s, 5888 KB]
+f = 28 [2317 evaluated, 2198 expanded, 117 reopened, t=1.14s, 5888 KB]
+f = 29 [2484 evaluated, 2340 expanded, 123 reopened, t=1.21s, 5888 KB]
+f = 30 [2854 evaluated, 2593 expanded, 127 reopened, t=1.37s, 6008 KB]
+f = 31 [3191 evaluated, 2879 expanded, 135 reopened, t=1.51s, 6008 KB]
+f = 32 [3672 evaluated, 3284 expanded, 149 reopened, t=1.71s, 6008 KB]
+f = 33 [4250 evaluated, 3783 expanded, 157 reopened, t=1.94s, 6136 KB]
+f = 34 [4842 evaluated, 4375 expanded, 181 reopened, t=2.19s, 6136 KB]
+f = 35 [5179 evaluated, 4863 expanded, 195 reopened, t=2.36s, 6136 KB]
+f = 36 [5478 evaluated, 5294 expanded, 215 reopened, t=2.51s, 6136 KB]
+f = 37 [5768 evaluated, 5600 expanded, 233 reopened, t=2.64s, 6268 KB]
+f = 38 [6041 evaluated, 5878 expanded, 243 reopened, t=2.77s, 6268 KB]
+f = 39 [6278 evaluated, 6202 expanded, 262 reopened, t=2.91s, 6268 KB]
+f = 40 [6508 evaluated, 6541 expanded, 275 reopened, t=3.05s, 6268 KB]
+f = 41 [6671 evaluated, 6832 expanded, 290 reopened, t=3.16s, 6268 KB]
+f = 42 [6709 evaluated, 6929 expanded, 293 reopened, t=3.18s, 6268 KB]
+f = 43 [6768 evaluated, 7002 expanded, 297 reopened, t=3.21s, 6268 KB]
+f = 44 [6815 evaluated, 7048 expanded, 298 reopened, t=3.23s, 6268 KB]
+f = 45 [6876 evaluated, 7141 expanded, 322 reopened, t=3.28s, 6268 KB]
+f = 46 [6920 evaluated, 7199 expanded, 324 reopened, t=3.31s, 6268 KB]
+f = 47 [6957 evaluated, 7235 expanded, 325 reopened, t=3.32s, 6268 KB]
+f = 48 [7021 evaluated, 7274 expanded, 326 reopened, t=3.35s, 6268 KB]
+New best heuristic value for lmcut: 2
+[g=46, 8047 evaluated, 7856 expanded, 437 reopened, t=3.78s, 6520 KB]
+f = 49 [8327 evaluated, 8122 expanded, 522 reopened, t=3.93s, 6520 KB]
+f = 50 [10218 evaluated, 9332 expanded, 597 reopened, t=4.55s, 6652 KB]
+f = 51 [12460 evaluated, 11404 expanded, 766 reopened, t=5.38s, 6784 KB]
+New best heuristic value for lmcut: 1
+[g=50, 12472 evaluated, 11407 expanded, 766 reopened, t=5.38s, 6784 KB]
+New best heuristic value for lmcut: 0
+[g=51, 12510 evaluated, 11414 expanded, 766 reopened, t=5.39s, 6784 KB]
+Solution found!
+Actual search time: 5.35s [t=5.39s]
+move_left c_10 c_1 g_2_1 g_3_1 g_1_1 g_2_1 (1)
+move_up c_9 c_10 g_3_2 g_3_3 g_3_1 g_3_2 (1)
+move_down c_12 c_9 g_1_3 g_1_5 g_1_4 g_1_6 (1)
+move_left c_3 c_12 g_4_3 g_6_3 g_3_3 g_5_3 (1)
+move_left c_3 c_3 g_3_3 g_5_3 g_2_3 g_4_3 (0)
+move_left c_3 c_3 g_2_3 g_4_3 g_1_3 g_3_3 (0)
+move_down c_8 c_3 g_4_1 g_4_2 g_4_2 g_4_3 (1)
+move_left c_4 c_8 g_5_1 g_6_1 g_4_1 g_5_1 (1)
+move_up c_2 c_4 g_6_4 g_6_6 g_6_3 g_6_5 (1)
+move_up c_2 c_2 g_6_3 g_6_5 g_6_2 g_6_4 (0)
+move_up c_2 c_2 g_6_2 g_6_4 g_6_1 g_6_3 (0)
+move_right c_5 c_2 g_4_6 g_5_6 g_5_6 g_6_6 (1)
+move_down c_7 c_5 g_4_4 g_4_5 g_4_5 g_4_6 (1)
+move_up c_6 c_7 g_5_4 g_5_5 g_5_3 g_5_4 (1)
+move_up c_6 c_6 g_5_3 g_5_4 g_5_2 g_5_3 (0)
+move_right c_1 c_6 g_2_4 g_3_4 g_3_4 g_4_4 (1)
+move_right c_1 c_1 g_3_4 g_4_4 g_4_4 g_5_4 (0)
+move_right c_1 c_1 g_4_4 g_5_4 g_5_4 g_6_4 (0)
+move_up c_11 c_1 g_2_5 g_2_6 g_2_4 g_2_5 (1)
+move_up c_7 c_11 g_4_5 g_4_6 g_4_4 g_4_5 (1)
+move_left c_5 c_7 g_5_6 g_6_6 g_4_6 g_5_6 (1)
+move_left c_5 c_5 g_4_6 g_5_6 g_3_6 g_4_6 (0)
+move_left c_5 c_5 g_3_6 g_4_6 g_2_6 g_3_6 (0)
+move_down c_7 c_5 g_4_4 g_4_5 g_4_5 g_4_6 (1)
+move_left c_1 c_7 g_5_4 g_6_4 g_4_4 g_5_4 (1)
+move_left c_1 c_1 g_4_4 g_5_4 g_3_4 g_4_4 (0)
+move_down c_2 c_1 g_6_1 g_6_3 g_6_2 g_6_4 (1)
+move_down c_2 c_2 g_6_2 g_6_4 g_6_3 g_6_5 (0)
+move_down c_2 c_2 g_6_3 g_6_5 g_6_4 g_6_6 (0)
+move_right c_4 c_2 g_4_1 g_5_1 g_5_1 g_6_1 (1)
+move_up c_8 c_4 g_4_2 g_4_3 g_4_1 g_4_2 (1)
+move_down c_6 c_8 g_5_2 g_5_3 g_5_3 g_5_4 (1)
+move_down c_6 c_6 g_5_3 g_5_4 g_5_4 g_5_5 (0)
+move_down c_6 c_6 g_5_4 g_5_5 g_5_5 g_5_6 (0)
+move_right c_3 c_6 g_1_3 g_3_3 g_2_3 g_4_3 (1)
+move_right c_3 c_3 g_2_3 g_4_3 g_3_3 g_5_3 (0)
+move_right c_3 c_3 g_3_3 g_5_3 g_4_3 g_6_3 (0)
+move_right c_1 c_3 g_3_4 g_4_4 g_4_4 g_5_4 (1)
+move_up c_12 c_1 g_1_4 g_1_6 g_1_3 g_1_5 (1)
+move_left c_5 c_12 g_2_6 g_3_6 g_1_6 g_2_6 (1)
+move_down c_9 c_5 g_3_1 g_3_2 g_3_2 g_3_3 (1)
+move_down c_9 c_9 g_3_2 g_3_3 g_3_3 g_3_4 (0)
+move_down c_9 c_9 g_3_3 g_3_4 g_3_4 g_3_5 (0)
+move_down c_9 c_9 g_3_4 g_3_5 g_3_5 g_3_6 (0)
+move_left c_3 c_9 g_4_3 g_6_3 g_3_3 g_5_3 (1)
+move_left c_3 c_3 g_3_3 g_5_3 g_2_3 g_4_3 (0)
+move_left c_1 c_3 g_4_4 g_5_4 g_3_4 g_4_4 (1)
+move_up c_6 c_1 g_5_5 g_5_6 g_5_4 g_5_5 (1)
+move_up c_6 c_6 g_5_4 g_5_5 g_5_3 g_5_4 (0)
+move_up c_6 c_6 g_5_3 g_5_4 g_5_2 g_5_3 (0)
+move_right c_1 c_6 g_3_4 g_4_4 g_4_4 g_5_4 (1)
+move_up c_9 c_1 g_3_5 g_3_6 g_3_4 g_3_5 (1)
+move_right c_5 c_9 g_1_6 g_2_6 g_2_6 g_3_6 (1)
+move_down c_12 c_5 g_1_3 g_1_5 g_1_4 g_1_6 (1)
+move_left c_3 c_12 g_2_3 g_4_3 g_1_3 g_3_3 (1)
+move_down c_8 c_3 g_4_1 g_4_2 g_4_2 g_4_3 (1)
+move_left c_4 c_8 g_5_1 g_6_1 g_4_1 g_5_1 (1)
+move_left c_4 c_4 g_4_1 g_5_1 g_3_1 g_4_1 (0)
+move_up c_2 c_4 g_6_4 g_6_6 g_6_3 g_6_5 (1)
+move_up c_2 c_2 g_6_3 g_6_5 g_6_2 g_6_4 (0)
+move_up c_2 c_2 g_6_2 g_6_4 g_6_1 g_6_3 (0)
+move_right c_1 c_2 g_4_4 g_5_4 g_5_4 g_6_4 (1)
+move_up c_7 c_1 g_4_5 g_4_6 g_4_4 g_4_5 (1)
+move_right c_5 c_7 g_2_6 g_3_6 g_3_6 g_4_6 (1)
+move_right c_5 c_5 g_3_6 g_4_6 g_4_6 g_5_6 (0)
+move_right c_5 c_5 g_4_6 g_5_6 g_5_6 g_6_6 (0)
+move_down c_7 c_5 g_4_4 g_4_5 g_4_5 g_4_6 (1)
+move_down c_11 c_7 g_2_4 g_2_5 g_2_5 g_2_6 (1)
+move_down c_9 c_11 g_3_4 g_3_5 g_3_5 g_3_6 (1)
+move_left c_1 c_9 g_5_4 g_6_4 g_4_4 g_5_4 (1)
+move_left c_1 c_1 g_4_4 g_5_4 g_3_4 g_4_4 (0)
+move_left c_1 c_1 g_3_4 g_4_4 g_2_4 g_3_4 (0)
+move_down c_2 c_1 g_6_1 g_6_3 g_6_2 g_6_4 (1)
+move_right c_4 c_2 g_3_1 g_4_1 g_4_1 g_5_1 (1)
+move_right c_4 c_4 g_4_1 g_5_1 g_5_1 g_6_1 (0)
+move_up c_8 c_4 g_4_2 g_4_3 g_4_1 g_4_2 (1)
+move_right c_10 c_8 g_1_1 g_2_1 g_2_1 g_3_1 (1)
+move_right c_13 c_10 g_1_2 g_2_2 g_2_2 g_3_2 (1)
+move_right c_3 c_13 g_1_3 g_3_3 g_2_3 g_4_3 (1)
+move_up c_12 c_3 g_1_4 g_1_6 g_1_3 g_1_5 (1)
+move_up c_12 c_12 g_1_3 g_1_5 g_1_2 g_1_4 (0)
+move_up c_12 c_12 g_1_2 g_1_4 g_1_1 g_1_3 (0)
+move_left c_1 c_12 g_2_4 g_3_4 g_1_4 g_2_4 (1)
+Plan length: 83 step(s).
+Plan cost: 51
+Expanded 11415 state(s).
+Reopened 766 state(s).
+Evaluated 12512 state(s).
+Evaluations: 18624
+Generated 74370 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 11404 state(s).
+Reopened until last jump: 766 state(s).
+Evaluated until last jump: 12460 state(s).
+Generated until last jump: 74291 state(s).
+Number of registered states: 12512
+Search time: 5.35s
+Total time: 5.39s
+Solution found.
+Peak memory: 6784 KB
