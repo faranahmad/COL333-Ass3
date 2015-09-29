@@ -1,0 +1,152 @@
+INFO     Running search.
+INFO     search input: output
+INFO     search arguments: ['--search', 'astar(lmcut())']
+INFO     search time_limit: None
+INFO     search memory limit: None
+INFO     search executable: /home/kartikeya/Desktop/LAMA/src/search/downward-release
+reading input... [t=0.00s]
+Simplifying transitions... done!
+done reading input! [t=0.00s]
+packing state variables...done! [t=0.00s]
+Variables: 98
+Facts: 196
+Bytes per state: 16
+Building successor generator...done! [t=0.00s]
+done initalizing global data [t=0.00s]
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+Initializing landmark cut heuristic...
+New best heuristic value for lmcut: 12
+[g=0, 1 evaluated, 0 expanded, t=0.00s, 3824 KB]
+f = 12 [1 evaluated, 0 expanded, t=0.00s, 3824 KB]
+Initial heuristic value for lmcut: 12
+f = 13 [4 evaluated, 1 expanded, t=0.00s, 3824 KB]
+New best heuristic value for lmcut: 11
+[g=2, 5 evaluated, 2 expanded, t=0.00s, 3824 KB]
+f = 14 [14 evaluated, 6 expanded, t=0.00s, 3824 KB]
+New best heuristic value for lmcut: 10
+[g=4, 15 evaluated, 7 expanded, t=0.00s, 3824 KB]
+New best heuristic value for lmcut: 9
+[g=5, 19 evaluated, 8 expanded, t=0.00s, 3824 KB]
+f = 15 [92 evaluated, 32 expanded, t=0.01s, 3824 KB]
+f = 16 [153 evaluated, 80 expanded, t=0.02s, 3824 KB]
+f = 17 [203 evaluated, 139 expanded, 2 reopened, t=0.03s, 3824 KB]
+f = 18 [235 evaluated, 172 expanded, 2 reopened, t=0.03s, 3824 KB]
+f = 19 [266 evaluated, 203 expanded, 2 reopened, t=0.03s, 3824 KB]
+f = 20 [302 evaluated, 235 expanded, 2 reopened, t=0.04s, 3824 KB]
+f = 21 [323 evaluated, 258 expanded, 2 reopened, t=0.04s, 3824 KB]
+f = 22 [340 evaluated, 298 expanded, 2 reopened, t=0.04s, 3824 KB]
+f = 23 [355 evaluated, 326 expanded, 2 reopened, t=0.04s, 3824 KB]
+f = 24 [366 evaluated, 346 expanded, 3 reopened, t=0.04s, 3824 KB]
+f = 25 [368 evaluated, 361 expanded, 3 reopened, t=0.04s, 3824 KB]
+f = 26 [372 evaluated, 368 expanded, 3 reopened, t=0.05s, 3824 KB]
+f = 27 [374 evaluated, 374 expanded, 3 reopened, t=0.05s, 3824 KB]
+f = 28 [375 evaluated, 375 expanded, 3 reopened, t=0.05s, 3824 KB]
+f = 29 [412 evaluated, 396 expanded, 5 reopened, t=0.05s, 3824 KB]
+f = 30 [425 evaluated, 410 expanded, 5 reopened, t=0.05s, 3824 KB]
+f = 31 [434 evaluated, 419 expanded, 5 reopened, t=0.05s, 3824 KB]
+f = 32 [452 evaluated, 432 expanded, 5 reopened, t=0.06s, 3824 KB]
+f = 33 [483 evaluated, 452 expanded, 5 reopened, t=0.06s, 3824 KB]
+f = 34 [500 evaluated, 463 expanded, 5 reopened, t=0.06s, 3824 KB]
+f = 35 [548 evaluated, 488 expanded, 5 reopened, t=0.07s, 3960 KB]
+New best heuristic value for lmcut: 8
+[g=27, 566 evaluated, 492 expanded, 5 reopened, t=0.07s, 3960 KB]
+f = 36 [629 evaluated, 528 expanded, 5 reopened, t=0.08s, 3960 KB]
+f = 37 [706 evaluated, 598 expanded, 5 reopened, t=0.09s, 3960 KB]
+f = 38 [774 evaluated, 668 expanded, 5 reopened, t=0.10s, 3960 KB]
+f = 39 [837 evaluated, 731 expanded, 5 reopened, t=0.10s, 3960 KB]
+f = 40 [905 evaluated, 784 expanded, 5 reopened, t=0.11s, 3960 KB]
+f = 41 [986 evaluated, 866 expanded, 5 reopened, t=0.12s, 3960 KB]
+f = 42 [1033 evaluated, 923 expanded, 5 reopened, t=0.13s, 3960 KB]
+f = 43 [1099 evaluated, 1000 expanded, 5 reopened, t=0.14s, 3960 KB]
+New best heuristic value for lmcut: 7
+[g=35, 1155 evaluated, 1031 expanded, 5 reopened, t=0.14s, 3960 KB]
+f = 44 [1198 evaluated, 1063 expanded, 5 reopened, t=0.15s, 3960 KB]
+f = 45 [1281 evaluated, 1144 expanded, 5 reopened, t=0.16s, 3960 KB]
+f = 46 [1324 evaluated, 1233 expanded, 5 reopened, t=0.16s, 3960 KB]
+f = 47 [1340 evaluated, 1302 expanded, 5 reopened, t=0.17s, 3960 KB]
+f = 48 [1344 evaluated, 1327 expanded, 5 reopened, t=0.17s, 3960 KB]
+f = 49 [1354 evaluated, 1342 expanded, 5 reopened, t=0.17s, 3960 KB]
+f = 50 [1362 evaluated, 1351 expanded, 5 reopened, t=0.17s, 3960 KB]
+New best heuristic value for lmcut: 6
+[g=44, 1406 evaluated, 1365 expanded, 5 reopened, t=0.17s, 3960 KB]
+New best heuristic value for lmcut: 4
+[g=45, 1413 evaluated, 1366 expanded, 5 reopened, t=0.17s, 3960 KB]
+New best heuristic value for lmcut: 3
+[g=47, 1433 evaluated, 1369 expanded, 5 reopened, t=0.17s, 3960 KB]
+f = 51 [1640 evaluated, 1452 expanded, 13 reopened, t=0.19s, 3960 KB]
+New best heuristic value for lmcut: 2
+[g=49, 1647 evaluated, 1455 expanded, 13 reopened, t=0.19s, 3960 KB]
+New best heuristic value for lmcut: 1
+[g=50, 1652 evaluated, 1456 expanded, 13 reopened, t=0.19s, 3960 KB]
+New best heuristic value for lmcut: 0
+[g=51, 1656 evaluated, 1457 expanded, 13 reopened, t=0.19s, 3960 KB]
+Solution found!
+Actual search time: 0.19s [t=0.19s]
+move_down3_1 c_12 g_1_5 g_1_4 g_1_3 g_1_6 (1)
+move_left2_1 c_10 g_2_1 g_3_1 g_1_1 (1)
+move_up2_1 c_9 g_3_2 g_3_3 g_3_1 (1)
+move_left3_3 c_3 g_4_3 g_5_3 g_6_3 g_3_3 g_2_3 g_1_3 (1)
+move_up2_2 c_6 g_5_4 g_5_5 g_5_3 g_5_2 (1)
+move_down2_1 c_8 g_4_2 g_4_1 g_4_3 (1)
+move_left2_1 c_4 g_5_1 g_6_1 g_4_1 (1)
+move_up3_3 c_2 g_6_4 g_6_5 g_6_6 g_6_3 g_6_2 g_6_1 (1)
+move_right2_1 c_5 g_5_6 g_4_6 g_6_6 (1)
+move_down2_1 c_7 g_4_5 g_4_4 g_4_6 (1)
+move_right2_3 c_1 g_3_4 g_2_4 g_4_4 g_5_4 g_6_4 (1)
+move_up2_1 c_11 g_2_5 g_2_6 g_2_4 (1)
+move_up2_1 c_7 g_4_5 g_4_6 g_4_4 (1)
+move_left2_3 c_5 g_5_6 g_6_6 g_4_6 g_3_6 g_2_6 (1)
+move_down2_1 c_7 g_4_5 g_4_4 g_4_6 (1)
+move_left2_2 c_1 g_5_4 g_6_4 g_4_4 g_3_4 (1)
+move_down3_3 c_2 g_6_3 g_6_2 g_6_1 g_6_4 g_6_5 g_6_6 (1)
+move_down2_3 c_6 g_5_3 g_5_2 g_5_4 g_5_5 g_5_6 (1)
+move_right2_1 c_1 g_4_4 g_3_4 g_5_4 (1)
+move_right2_1 c_4 g_5_1 g_4_1 g_6_1 (1)
+move_up2_1 c_8 g_4_2 g_4_3 g_4_1 (1)
+move_right3_3 c_3 g_3_3 g_2_3 g_1_3 g_4_3 g_5_3 g_6_3 (1)
+move_up3_1 c_12 g_1_4 g_1_5 g_1_6 g_1_3 (1)
+move_left2_1 c_5 g_2_6 g_3_6 g_1_6 (1)
+move_down2_4 c_9 g_3_2 g_3_1 g_3_3 g_3_4 g_3_5 g_3_6 (1)
+move_left3_2 c_3 g_4_3 g_5_3 g_6_3 g_3_3 g_2_3 (1)
+move_left2_1 c_1 g_4_4 g_5_4 g_3_4 (1)
+move_up2_3 c_6 g_5_5 g_5_6 g_5_4 g_5_3 g_5_2 (1)
+move_right2_1 c_1 g_4_4 g_3_4 g_5_4 (1)
+move_up2_1 c_9 g_3_5 g_3_6 g_3_4 (1)
+move_right2_1 c_5 g_2_6 g_1_6 g_3_6 (1)
+move_down3_1 c_12 g_1_5 g_1_4 g_1_3 g_1_6 (1)
+move_left3_1 c_3 g_2_3 g_3_3 g_4_3 g_1_3 (1)
+move_down2_1 c_8 g_4_2 g_4_1 g_4_3 (1)
+move_left2_2 c_4 g_5_1 g_6_1 g_4_1 g_3_1 (1)
+move_up3_3 c_2 g_6_4 g_6_5 g_6_6 g_6_3 g_6_2 g_6_1 (1)
+move_right2_1 c_1 g_5_4 g_4_4 g_6_4 (1)
+move_up2_1 c_7 g_4_5 g_4_6 g_4_4 (1)
+move_right2_3 c_5 g_3_6 g_2_6 g_4_6 g_5_6 g_6_6 (1)
+move_down2_1 c_11 g_2_5 g_2_4 g_2_6 (1)
+move_down2_1 c_7 g_4_5 g_4_4 g_4_6 (1)
+move_left2_1 c_1 g_5_4 g_6_4 g_4_4 (1)
+move_down3_2 c_2 g_6_3 g_6_2 g_6_1 g_6_4 g_6_5 (1)
+move_right2_2 c_4 g_4_1 g_3_1 g_5_1 g_6_1 (1)
+move_up2_1 c_8 g_4_2 g_4_3 g_4_1 (1)
+move_right3_1 c_3 g_3_3 g_2_3 g_1_3 g_4_3 (1)
+move_right2_1 c_13 g_2_2 g_1_2 g_3_2 (1)
+move_down2_1 c_9 g_3_5 g_3_4 g_3_6 (1)
+move_right2_1 c_10 g_2_1 g_1_1 g_3_1 (1)
+move_up3_3 c_12 g_1_4 g_1_5 g_1_6 g_1_3 g_1_2 g_1_1 (1)
+move_left2_3 c_1 g_4_4 g_5_4 g_3_4 g_2_4 g_1_4 (1)
+Plan length: 51 step(s).
+Plan cost: 51
+Expanded 1458 state(s).
+Reopened 13 state(s).
+Evaluated 1660 state(s).
+Evaluations: 1891
+Generated 10588 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 1452 state(s).
+Reopened until last jump: 13 state(s).
+Evaluated until last jump: 1640 state(s).
+Generated until last jump: 10545 state(s).
+Number of registered states: 1660
+Search time: 0.19s
+Total time: 0.19s
+Solution found.
+Peak memory: 3960 KB

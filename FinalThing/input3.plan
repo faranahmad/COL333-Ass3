@@ -1,0 +1,62 @@
+INFO     Running search.
+INFO     search input: output
+INFO     search arguments: ['--search', 'astar(lmcut())']
+INFO     search time_limit: None
+INFO     search memory limit: None
+INFO     search executable: /home/kartikeya/Desktop/LAMA/src/search/downward-release
+reading input... [t=0.00s]
+Simplifying transitions... done!
+done reading input! [t=0.04s]
+packing state variables...done! [t=0.04s]
+Variables: 273
+Facts: 546
+Bytes per state: 36
+Building successor generator...done! [t=0.05s]
+done initalizing global data [t=0.05s]
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+Initializing landmark cut heuristic...
+New best heuristic value for lmcut: 6
+[g=0, 1 evaluated, 0 expanded, t=0.05s, 6268 KB]
+f = 6 [1 evaluated, 0 expanded, t=0.05s, 6268 KB]
+Initial heuristic value for lmcut: 6
+New best heuristic value for lmcut: 5
+[g=1, 20 evaluated, 1 expanded, t=0.06s, 6268 KB]
+New best heuristic value for lmcut: 4
+[g=2, 32 evaluated, 2 expanded, t=0.06s, 6268 KB]
+f = 7 [93 evaluated, 4 expanded, t=0.08s, 6268 KB]
+f = 8 [1009 evaluated, 88 expanded, t=0.39s, 6268 KB]
+New best heuristic value for lmcut: 3
+[g=5, 6929 evaluated, 888 expanded, t=2.41s, 7024 KB]
+New best heuristic value for lmcut: 2
+[g=6, 6961 evaluated, 889 expanded, t=2.42s, 7024 KB]
+New best heuristic value for lmcut: 1
+[g=7, 7013 evaluated, 890 expanded, t=2.43s, 7024 KB]
+New best heuristic value for lmcut: 0
+[g=8, 7029 evaluated, 891 expanded, t=2.43s, 7024 KB]
+Solution found!
+Actual search time: 2.38s [t=2.43s]
+move_down2_1 c_19 g_8_5 g_8_4 g_8_6 (1)
+move_right2_2 c_18 g_7_4 g_6_4 g_8_4 g_9_4 (1)
+move_up2_4 c_20 g_6_5 g_6_6 g_6_4 g_6_3 g_6_2 g_6_1 (1)
+move_right2_2 c_21 g_5_6 g_4_6 g_6_6 g_7_6 (1)
+move_up2_4 c_8 g_4_7 g_4_8 g_4_6 g_4_5 g_4_4 g_4_3 (1)
+move_left2_3 c_4 g_6_8 g_7_8 g_5_8 g_4_8 g_3_8 (1)
+move_up2_1 c_3 g_6_9 g_6_10 g_6_8 (1)
+move_left2_6 c_1 g_7_10 g_8_10 g_6_10 g_5_10 g_4_10 g_3_10 g_2_10 g_1_10 (1)
+Plan length: 8 step(s).
+Plan cost: 8
+Expanded 892 state(s).
+Reopened 0 state(s).
+Evaluated 7052 state(s).
+Evaluations: 7415
+Generated 22388 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 88 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 1009 state(s).
+Generated until last jump: 2189 state(s).
+Number of registered states: 7052
+Search time: 2.38s
+Total time: 2.43s
+Solution found.
+Peak memory: 7024 KB

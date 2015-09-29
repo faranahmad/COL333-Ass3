@@ -1,0 +1,33 @@
+INFO     Running search.
+INFO     search input: output
+INFO     search arguments: ['--search', 'astar(lmcut())']
+INFO     search time_limit: None
+INFO     search memory limit: None
+INFO     search executable: /home/kartikeya/Desktop/LAMA/src/search/downward-release
+reading input... [t=0.00s]
+Simplifying transitions... done!
+done reading input! [t=0.00s]
+packing state variables...done! [t=0.00s]
+Variables: 1
+Facts: 2
+Bytes per state: 4
+Building successor generator...done! [t=0.00s]
+done initalizing global data [t=0.00s]
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+Initializing landmark cut heuristic...
+Initial state is a dead end.
+Initial heuristic value for lmcut: infinity
+Completely explored state space -- no solution!
+Actual search time: 0.00s [t=0.00s]
+Expanded 0 state(s).
+Reopened 0 state(s).
+Evaluated 1 state(s).
+Evaluations: 1
+Generated 0 state(s).
+Dead ends: 0 state(s).
+Number of registered states: 1
+Search time: 0.00s
+Total time: 0.00s
+Search stopped without finding a solution.
+Peak memory: 3296 KB
+Command '['/home/kartikeya/Desktop/LAMA/src/search/downward-release', '--search', 'astar(lmcut())', '--internal-plan-file', 'sas_plan']' returned non-zero exit status 5
