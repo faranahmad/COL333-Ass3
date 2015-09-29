@@ -1,6 +1,17 @@
-filenamedomain = "problem-domain.pddl"
+import sys
 
-filenametogen = "problem.pddl"
+n1 = str(sys.argv[1])
+
+domread= open("kgdomain.pddl",'r')
+strdom = domread.read()
+domread.close()
+
+filenamedomain = n1+"-domain.pddl"
+domwr = open(filenamedomain,'w')
+domwr.write(strdom)
+domwr.close()
+
+filenametogen = n1+".pddl"
 
 thingstowrite=[]
 thingstowrite.append("(define (problem test1)")
@@ -32,9 +43,9 @@ for i in xrange(1,ncars+1):
 	for j in xrange(1,ncars+1):
 		strreq = "(= (distance C_"+str(i) + " C_"+str(j)+" ) "
 		if i==j:
-			strreq+=" 0 )\n"
-		else:
 			strreq+=" 1 )\n"
+		else:
+			strreq+=" 2 )\n"
 		distances.append(strreq)
 
 def makeisinbetweenstring(i,j,k,l):
@@ -64,14 +75,6 @@ for i in xrange(1,dimy):
 	for j in xrange(1,dimx+1):
 		rightlise.append(makeisinbetweenstring4(i,j,i+1,j))
 
-walls=[]
-
-for i in xrange(1,dimy+1):
-	walls.append("( wallb G_"+str(i)+"_"+str(dimx)+")\n")
-
-for i in xrange(1,dimx+1):
-	walls.append("( walll G_"+str(dimy)+"_"+str(i)+")\n")
-
 boolgrids = [[0 for i in xrange(1+dimy)] for j in xrange(1+dimx)] 
 
 allcars=[]
@@ -94,7 +97,8 @@ for elem in allcars:
 		carstrings.append("( position C_"+elem[0]+" G_"+str(x1)+"_"+str(x2) +" G_"+str(fin) +"_" + str(x2) + " )\n")
 		leftsneeded.append(x2)
 		for i in xrange(int(elem[1])):
-			boolgrids[x1+i][x2]=elem[0]
+			print elem, x1,x2, len(boolgrids), len(boolgrids[0])
+			boolgrids[x2][x1+i]=elem[0]
 	else:
 		x1 = int(elem[2])
 		x2 = int(elem[3])
@@ -103,7 +107,7 @@ for elem in allcars:
 		carstrings.append("( vertical C_"+elem[0] + ")\n")
 		carstrings.append("( position C_"+elem[0]+" G_"+str(x1)+"_"+str(x2) +" G_"+str(x1)+"_"+str(fin) + " )\n")
 		for i in xrange(int(elem[1])):
-			boolgrids[x1][x2+i]=elem[0]
+			boolgrids[x2+i][x1]=elem[0]
 # print allcars
 
 
@@ -121,10 +125,10 @@ for i in xrange(2,dimy+1):
 
 
 
-for i in xrange(1,1+dimy):
-	for j in xrange(1,1+dimx):
+for i in xrange(1,1+dimx):
+	for j in xrange(1,1+dimy):
 		if boolgrids[i][j]==0:
-			carstrings.append("( free G_"+str(i)+"_"+str(j)+" )\n")
+			carstrings.append("( free G_"+str(j)+"_"+str(i)+" )\n")
 		# else:
 			# carstrings.append("( occupied C_"+boolgrids[i][j]+" G_"+str(i)+"_"+str(j)+" )\n") 
 
